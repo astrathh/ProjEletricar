@@ -1,0 +1,12 @@
+.form{
+    border: 1px solid;
+    border-radius: 2%;
+    width:33rem;
+    margin: auto;
+}
+
+.form_input{
+    margin: 5px;
+    width: 90%;
+    margin: auto;
+}
