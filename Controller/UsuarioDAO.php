@@ -67,6 +67,5 @@ class UsuarioDAO
         echo "Usuário não encontrado!";
         return false;
     }
-
 }
 

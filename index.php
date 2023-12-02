@@ -26,8 +26,6 @@
                     </ul>
                 </div>
 
-
-
 <?php
     session_start();
     // Verificar se o usuário está logado
