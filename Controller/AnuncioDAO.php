@@ -1,6 +1,6 @@
 <?php
-include_once ("../Model/Anuncio.php");
-include_once ("../Model/Banco.php");
+include_once ("./Model/Anuncio.php");
+include_once ("./Model/Banco.php");
 
 class AnuncioDAO
 {
@@ -26,4 +26,17 @@ class AnuncioDAO
             echo "Erro ao cadastrar anúncio!";
         }
     }
+
+    public function listar()
+    {
+        $banco = new Banco();
+        $conexao = $banco->conexao;
+
+        $sql = "SELECT * FROM anuncio";
+        $resultado = pg_query($conexao, $sql);
+
+        pg_close($conexao);
+        return $resultado;
+    }
+
 }

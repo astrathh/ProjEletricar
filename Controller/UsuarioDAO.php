@@ -7,6 +7,7 @@ class UsuarioDAO
     public function gravar(Usuario $usuario)
     {
         // if (empty($email) || empty($senha) || empty($nome)) {
+        //     echo "Preencha todos os campos!";
         //     return false;
         // }
 
