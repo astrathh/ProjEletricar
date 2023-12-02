@@ -8,6 +8,14 @@
 <body>
     <h1>Inserir anuncio</h1>
     <form action="Controller\Controlador.php" method="post">
+        Carro: 
+        <select name="carros" name="txtCarro_id">
+                <option value="">--Please choose an option--</option>
+                <?php 
+                    include_once("./anuncioFunc.php");
+                    getCarrosOption();
+                ?>
+        </select><br>
         Preço Anuncio: <input type="text" name="txtPreco_anuncio"><br>
         Descrição: <input type="text" name="txtDescricao"><br>
         Data Publicação: <input type="text" name="txtData_publicacao"><br>
@@ -20,7 +28,7 @@
         Aceita Troca: <input type="text" name="txtAceita_troca"><br>
         Final Placa: <input type="text" name="txtFinal_placa"><br>
         Capacidade Bateria: <input type="text" name="txtCapacidade_bateria"><br>
-        <input type="submit" name="b1" value="Inserir">
+        <input type="submit" name="b1" value="InserirAnuncio">
     </form>
 </body>
 </html>
