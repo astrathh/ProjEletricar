@@ -19,7 +19,7 @@
     function getCarrosOptionId($id_usuario) {
         $banco = new Banco();
         $conexao = $banco->conexao;
-        $sql = "SELECT id_carro, modelo FROM carro WHERE . $id_usuario;";
+        $sql = "SELECT id_carro, modelo FROM carro WHERE id_usuario = " . "$id_usuario;";
         $resultado = pg_query($conexao, $sql);
         $id_carro = 0;
         $modelo_carro = "";

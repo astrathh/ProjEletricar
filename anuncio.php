@@ -47,7 +47,7 @@
                     $id_usuario = $_SESSION['id_usuario'];
                     echo $id_usuario;
                 ?> " hidden readonly required><br>
-            <input value="<?php echo(date('Y-m-d'))?>" name="txtData_publicacao"/><br>
+            <input value="<?php echo(date('Y-m-d'))?>" name="txtData_publicacao" hidden readonly required/><br>
             <input type="file" accept="image/*" multiple name="imagem[]" required/><br>
             <!-- passar imagens como parametro -->
         <input type="submit" name="b1" value="Inserir">
