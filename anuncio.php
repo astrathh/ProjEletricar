@@ -6,9 +6,23 @@
     <title>Inserir anuncio</title>
 </head>
 <body>
-    
+    <!-- função php para verificar se o usuário está logado, se ele não estiver, redireciona para login.php -->
+    <?php
+        session_start();
+        if (!isset($_SESSION['id_usuario'])) {
+            echo '<script type="text/javascript">
+                        window.onload = function () { 
+                            alert("Você precisa estar logado para anunciar!");
+                            window.location = "http://localhost/ProjEletricar/login.php";
+                            }
+                        </script>';
+            exit();
+        }
+    ?>
     <h1>Inserir anuncio</h1>
-    <form action="./Controller/Controlador.php" method="post">
+    <!-- <form action="./Controller/Controlador.php" method="post" enctype="multipart/form-data"> -->
+    <form action="./Controller/Controlador.php" method="post" enctype="multipart/form-data"> 
+        <!-- para salvar várias imagem no banco de dados, é necessário utilizar o enctype="multipart/form-data" -->
         Carro: 
         <select name="txtCarro_id">
                 <option value="">--Please choose an option--</option>
@@ -28,9 +42,14 @@
             Aceita Troca: <input type="checkbox" name="txtAceita_troca"><br>
             Final Placa: <input type="text" name="txtFinal_placa" required><br>
             Capacidade Bateria: <input type="text" name="txtCapacidade_bateria" required><br>
-            <input type="text" name="txtUsuario_id" required><br>
-            <input value="<?php echo(date('Y-m-d'))?>" name="txtData_publicacao"/>
-            <!-- <input type="file" accept="image/*" multiple/> -->
+            <input type="text" name="txtUsuario_id" value="
+                <?php
+                    $id_usuario = $_SESSION['id_usuario'];
+                    echo $id_usuario;
+                ?> " hidden readonly required><br>
+            <input value="<?php echo(date('Y-m-d'))?>" name="txtData_publicacao"/><br>
+            <input type="file" accept="image/*" multiple name="imagem[]" required/><br>
+            <!-- passar imagens como parametro -->
         <input type="submit" name="b1" value="Inserir">
     </form>
 </body>

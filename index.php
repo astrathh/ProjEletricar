@@ -21,7 +21,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Comprar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Vender</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./anuncio.php">Vender</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://localhost/ProjEletricar/cadastro.html">Conta</a></li>
                     </ul>
                 </div>
@@ -41,7 +41,6 @@
             </ul>
         </div>';
         
-        exit();
     }
     ?>
 
