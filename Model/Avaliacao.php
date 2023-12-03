@@ -1,96 +1,98 @@
 <?php
-    private $id_avaliacao;
-    private $nota;
-    private $texto;
-    private $avaliador_id;
-    private $anuncio_id;
 
-    public function setId_avaliacao($id_avaliacao) {
-        $this->id_avaliacao = $id_avaliacao;
-    }
+    class Avaliacao {
+        private $id_avaliacao;
+        private $nota;
+        private $texto;
+        private $avaliador_id;
+        private $anuncio_id;
 
-    public function getId_avaliacao() {
-        return $this->id_anuncio;
-    }
-    /**
-     * Get the value of nota
-     */ 
-    public function getNota()
-    {
-        return $this->nota;
-    }
+        public function setId_avaliacao($id_avaliacao) {
+            $this->id_avaliacao = $id_avaliacao;
+        }
 
-    /**
-     * Set the value of nota
-     *
-     * @return  self
-     */ 
-    public function setNota($nota)
-    {
-        $this->nota = $nota;
+        public function getId_avaliacao() {
+            return $this->id_avaliacao;
+        }
+        /**
+         * Get the value of nota
+         */ 
+        public function getNota()
+        {
+            return $this->nota;
+        }
 
-        return $this;
-    }
+        /**
+         * Set the value of nota
+         *
+         * @return  self
+         */ 
+        public function setNota($nota)
+        {
+            $this->nota = $nota;
 
-    /**
-     * Get the value of texto
-     */ 
-    public function getTexto()
-    {
-        return $this->texto;
-    }
+            return $this;
+        }
 
-    /**
-     * Set the value of texto
-     *
-     * @return  self
-     */ 
-    public function setTexto($texto)
-    {
-        $this->texto = $texto;
+        /**
+         * Get the value of texto
+         */ 
+        public function getTexto()
+        {
+            return $this->texto;
+        }
 
-        return $this;
-    }
+        /**
+         * Set the value of texto
+         *
+         * @return  self
+         */ 
+        public function setTexto($texto)
+        {
+            $this->texto = $texto;
 
-    /**
-     * Get the value of avaliador_id
-     */ 
-    public function getAvaliador_id()
-    {
-        return $this->avaliador_id;
-    }
+            return $this;
+        }
 
-    /**
-     * Set the value of avaliador_id
-     *
-     * @return  self
-     */ 
-    public function setAvaliador_id($avaliador_id)
-    {
-        $this->avaliador_id = $avaliador_id;
+        /**
+         * Get the value of avaliador_id
+         */ 
+        public function getAvaliador_id()
+        {
+            return $this->avaliador_id;
+        }
 
-        return $this;
-    }
+        /**
+         * Set the value of avaliador_id
+         *
+         * @return  self
+         */ 
+        public function setAvaliador_id($avaliador_id)
+        {
+            $this->avaliador_id = $avaliador_id;
 
-    /**
-     * Get the value of anuncio_id
-     */ 
-    public function getAnuncio_id()
-    {
-        return $this->anuncio_id;
-    }
+            return $this;
+        }
 
-    /**
-     * Set the value of anuncio_id
-     *
-     * @return  self
-     */ 
-    public function setAnuncio_id($anuncio_id)
-    {
-        $this->anuncio_id = $anuncio_id;
+        /**
+         * Get the value of anuncio_id
+         */ 
+        public function getAnuncio_id()
+        {
+            return $this->anuncio_id;
+        }
 
-        return $this;
-    }
-    
+        /**
+         * Set the value of anuncio_id
+         *
+         * @return  self
+         */ 
+        public function setAnuncio_id($anuncio_id)
+        {
+            $this->anuncio_id = $anuncio_id;
+
+            return $this;
+        }
+    }    
 
 ?>

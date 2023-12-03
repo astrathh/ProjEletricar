@@ -14,7 +14,7 @@ switch ($botao) {
         break;
 
     case "inserir":
-        header("Location: ../View/Inserir.php?txtPreco_anuncio=" . $_POST["txtPreco_anuncio"] . "&txtDescricao=" . $_POST["txtDescricao"] . "&txtData_publicacao=" . $_POST["txtData_publicacao"] . "&txtContato_vendedor=" . $_POST["txtContato_vendedor"] . "&txtCor=" . $_POST["txtCor"] . "&txtAno=" . $_POST["txtAno"] . "&txtKm_rodada=" . $_POST["txtKm_rodada"] . "&txtModificado=" . $_POST["txtModificado"] . "&txtLocalizacao=" . $_POST["txtLocalizacao"] . "&txtAceita_troca=" . $_POST["txtAceita_troca"] . "&txtFinal_placa=" . $_POST["txtFinal_placa"] . "&txtCapacidade_bateria=" . $_POST["txtCapacidade_bateria"] . "&txtCarro_id=" . $_POST["txtCarro_id"]);
+        header("Location: ../View/Inserir.php?txtCarro_id=" . $_POST["txtCarro_id"] . "&txtPreco_anuncio=" . $_POST["txtPreco_anuncio"] . "&txtDescricao=" . $_POST["txtDescricao"] . "&txtData_publicacao=" . $_POST["txtData_publicacao"] . "&txtContato_vendedor=" . $_POST["txtContato_vendedor"] . "&txtCor=" . $_POST["txtCor"] . "&txtAno=" . $_POST["txtAno"] . "&txtKm_rodada=" . $_POST["txtKm_rodada"] . "&txtModificado=" . $_POST["txtModificado"] . "&txtLocalizacao=" . $_POST["txtLocalizacao"] . "&txtAceita_troca=" . $_POST["txtAceita_troca"] . "&txtFinal_placa=" . $_POST["txtFinal_placa"] . "&txtCapacidade_bateria=" . $_POST["txtCapacidade_bateria"] . "&txtUsuario_id=" . $_POST["txtUsuario_id"]);
         break;
 }
     

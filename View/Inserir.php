@@ -11,7 +11,8 @@
     $anuncioDAO = new AnuncioDAO();
     $anuncio = new Anuncio();
 
-    $anuncio->setPreco_anuncio($_GET["txtPreco_anuncio"]);
+    $anuncio->setCarro_id($_GET["txtCarro_id"]); 
+    $anuncio->setPreco_anuncio(intval($_GET["txtPreco_anuncio"]));
     $anuncio->setDescricao($_GET["txtDescricao"]);
     $anuncio->setData_publicacao($_GET["txtData_publicacao"]);
     $anuncio->setContato_vendedor($_GET["txtContato_vendedor"]);
@@ -23,7 +24,7 @@
     $anuncio->setAceita_troca($_GET["txtAceita_troca"]);
     $anuncio->setFinal_placa($_GET["txtFinal_placa"]);
     $anuncio->setCapacidade_bateria($_GET["txtCapacidade_bateria"]);
-
+    $anuncio->setUsuario_id($_GET["txtUsuario_id"]);
     $r = $anuncioDAO->inserir($anuncio);
     ?>
 </body>
