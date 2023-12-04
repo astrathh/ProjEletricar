@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body class="dropdown" data-bs-theme="dark"> <!-- Deixa o corpo todo com o tema dark-->
-    
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!--Barra de navegação - Faz com que a barra de navegação seja exibida apenas em telas grandes, em telas menores ela ficará como um menu oculto-->
             <div class="container"> <!--Conteiner responsivo do Bootstrap-->
                 <a class="navbar-brand" href="#">ELETRICAR</a> <!-- Faz com que o elemento fique destacado na navBar-->
@@ -23,6 +21,7 @@
                         <li class="nav-item"><a class="nav-link" href="#">Comprar</a></li>
                         <li class="nav-item"><a class="nav-link" href="./anuncio.php">Vender</a></li>
                         <li class="nav-item"><a class="nav-link" href="http://localhost/ProjEletricar/cadastro.html">Conta</a></li>
+                        <li class="nav-item"><a class="nav-link" href='./meusAnuncios.php'>Meus Anúncios</a></li>
                     </ul>
                 </div>
 
@@ -31,7 +30,7 @@
     // Verificar se o usuário está logado
     if (isset($_SESSION['id_usuario'])) {
         $nome = $_SESSION['nome'];
-        echo "Bem-vindo, $nome!"; // Exibir saudação ou outras informações
+        echo ("Bem-vindo, $nome!"); // Exibir saudação ou outras informações
     } else {
         echo '
         <div>
@@ -43,7 +42,6 @@
         
     }
     ?>
-
         </div>
     </nav>
 
@@ -64,37 +62,10 @@
         <div class="container">
             <h2 class="text-center mb-4">Destaques</h2> <!--Margem inferior e centralizando texto-->
             <div class="row"> <!-- Define uma linha para organizar conteúdos -->
-                <div class="col-md-4 mb-4"> <!-- Determina  o comportamento das colunas em telas médias. Essa ocupará 4 das 12 colunas disponíveis no grid-->
-                    <div class="card", style="height: 20rem;"> <!-- Conteiner estilo cartão-->
-                        <img src="../src/peugeot.png" class="card-img-top" alt="Carro 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Peugeot 208</h5>
-                            <p class="card-text">Ano: 2023</p>
-                            <p class="card-text">Preço: R$ 220.000,00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4", id="card2">
-                    <div class="card", style="height: 20rem;">
-                        <img src="../src/kwidkkkkkkkkk.png" class="card-img-top" alt="Carro 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Kwid Elétrico</h5>
-                            <p class="card-text">Ano: 2023</p>
-                            <p class="card-text">Preço: R$ 145.000,00</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4", id="card2">
-                    <div class="card", style="height: 20rem;">
-                        <img src="../src/seal.png" class="card-img-top" alt="Carro 3">
-                        <div class="card-body">
-                            <h5 class="card-title"> BYD Seal</h5>
-                            <p class="card-text">Ano: 2023</p>
-                            <p class="card-text">Preço R$: 330.000,00</p>
-                        </div>
-                    </div>
-                    
-                </div>
+                <?php
+                    include_once("./View/anuncioFunc.php");
+                    getAnuncios();
+                ?>
             </div>
         </div>
     
@@ -105,7 +76,7 @@
         <div class="row", style="margin-left: 2vh; margin-right: 2vh;">
             <div class="col-md-3 mb-4"> 
                 <div class="card Category-card", style="height: 15rem;">
-                    <img src="../src/hero.png" class="card-img-top" alt="Categoria Hatches", height="auto", width="auto">
+                    <img src="./resources/images/gmw-ora-gt-1689103265298_v2_900x506.jpg" class="card-img-top" alt="Categoria Hatches", height="auto", width="auto">
                     <div class="card-body">
                         <h5 class="card-title">Hatches</h5>
                     </div>
@@ -113,7 +84,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card Category-card", style="height: 15rem;">
-                    <img src="../src/cybertryck.png" class="card-img-top" alt="Categoria Picapes", height="auto", width="auto">
+                    <img src="./resources/images/toyota-pickup-ev-concept.jpg" class="card-img-top" alt="Categoria Picapes", height="auto", width="auto">
                     <div class="card-body">
                         <h5 class="card-title">Picapes</h5>
                     </div>
@@ -121,7 +92,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card Category-card", style="height: 15rem;">
-                    <img src="../src/byd.png" class="card-img-top" alt="Categoria Sedans", height="auto", width="auto">
+                    <img src="./resources/images/d13cbf1a5ab7375eda435b76976f8f7d.jpg" class="card-img-top" alt="Categoria Sedans", height="auto", width="auto">
                     <div class="card-body">
                         <h5 class="card-title">Sedans</h5>
                     </div>
@@ -129,7 +100,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card Category-card", style="height: 15rem;">
-                    <img src="../src/carro.png" class="card-img-top" alt="Categoria SUVs", height="auto", width="auto">
+                    <img src="./resources/images/xpeng-g9-suv-eletrico-recarga-mais-rapida.jpg" class="card-img-top" alt="Categoria SUVs", height="auto", width="auto">
                     <div class="card-body">
                         <h5 class="card-title">SUVs</h5>
                     </div>
@@ -137,10 +108,15 @@
             </div>
         </div>
     </div>
+    <br><br>
     
     <footer class="bg-dark text-light text-center py-3">
-        <p>&copy; Notinha de Rodapé.</p>
-    </footer>
+    <div>
+        <p>&copy; 2023 ELETRICAR. Todos os direitos reservados.</p>
+        <p>Este site é dedicado à venda de carros elétricos. Consulte nossos <a href="#">Termos de Serviço</a> e <a href="#">Política de Privacidade</a>.</p>
+    </div>
+</footer>
+
     
 </body>
 </html>

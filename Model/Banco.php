@@ -10,11 +10,9 @@ class Banco
         //definições de host, database, usuário e senha
         $host = "localhost";
         $base = "webproj";
-        // $porta = "5432";
-        $porta = "5433";
+        $porta = "5432";
         $usuario = "postgres";
-        // $senha = "24968808Cc";
-        $senha="postgresql";
+        $senha = "24968808Cc";
         //conecta ao banco de dados
         $this->conexao = pg_connect("host=$host port=$porta dbname=$base user=$usuario password=$senha");
         

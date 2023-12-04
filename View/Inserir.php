@@ -25,6 +25,7 @@
     $anuncio->setFinal_placa($_GET["txtFinal_placa"]);
     $anuncio->setCapacidade_bateria($_GET["txtCapacidade_bateria"]);
     $anuncio->setUsuario_id($_GET["txtUsuario_id"]);
+    // $r = $anuncioDAO->inserir($anuncio);
     $r = $anuncioDAO->inserir($anuncio);
     ?>
 </body>
