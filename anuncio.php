@@ -95,7 +95,7 @@
             <label for="txtCapacidade_bateria" class="form-label">Capacidade Bateria:</label>
             <input type="text" class="form-control" name="txtCapacidade_bateria" required min="0" minlength="1" maxlength="6">
         </div>
-	<input type="text" name="txtUsuario_id" value="
+	    <input type="text" name="txtUsuario_id" value="
                 <?php
                     $id_usuario = $_SESSION['id_usuario'];
                     echo $id_usuario;
@@ -103,7 +103,7 @@
             <input value="<?php echo(date('Y-m-d'))?>" name="txtData_publicacao" hidden readonly required/><br>
         <div class="mb-3">
             <label for="imagem" class="form-label">Imagens:</label>
-            <input type="file" class="form-control" accept="image/*" multiple name="imagem" required>
+            <input type="file" class="form-control" accept="image/*" multiple name="imagem[]" required>
         </div>
 
         <input type="submit" name="b1" value="Inserir" class="btn btn-primary">

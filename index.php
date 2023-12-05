@@ -61,10 +61,10 @@
     <section class="py-5"> <!-- Gera um espaço que deixa a página mais confortável para o usuário-->
         <div class="container">
             <h2 class="text-center mb-4">Destaques</h2> <!--Margem inferior e centralizando texto-->
-            <div class="row"> <!-- Define uma linha para organizar conteúdos -->
+            <div class="row mx-auto"> <!-- Define uma linha para organizar conteúdos -->
                 <?php
                     include_once("./View/anuncioFunc.php");
-                    getAnuncios();
+                    getAnunciosCard();
                 ?>
             </div>
         </div>

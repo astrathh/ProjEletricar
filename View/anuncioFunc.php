@@ -107,7 +107,7 @@
         }
     }
 
-    function getAnuncios() {
+    function getAnunciosCard() {
         $banco = new Banco();
         $conexao = $banco->conexao;
         $sql = "SELECT * FROM anuncio";
@@ -127,11 +127,14 @@
             $sqlAux="SELECT marca, modelo FROM carro WHERE id_carro = $carro_id;";
             $resultadoAux = pg_query($conexao, $sqlAux);
             $MarcaModelo= pg_fetch_result($resultadoAux, 0, 0) . " " . pg_fetch_result($resultadoAux, 0, 1);
-
+            $sql = "SELECT caminho FROM imagem WHERE anuncio_id = " . "$id_anuncio;";
+            $resImagem = pg_query($conexao, $sql);
+            $caminho = pg_fetch_result($resImagem, 0, 0);
+            $caminho = substr($caminho, 1);
             echo(
                 "<div style='width: 30%; margin: 1rem; display: flex; flex-direction: column; border: 1px solid #808080; border-radius: 8px; padding: 1rem;'>
                 <div style='height: 20rem; overflow: hidden;'>
-                    <img src='./resources/images/car-icon-sign-vector.jpg' class='img-fluid' alt='Carro 1'>
+                    <img src='$caminho' class='img-fluid' alt='Carro 1' style='object-fit: cover; width: 100%; height: 100%;'>
                 </div>
                 <div class='card-body'>
                     <h5 class='card-title'>$MarcaModelo</h5>
@@ -142,8 +145,13 @@
                         <input type='submit' name='b1' value='Info' class='btn btn-primary'>
                     </form>
                 </div>
-            </div>"
-            );
+            </div>
+            ");
+        // $sql = "SELECT caminho FROM imagem WHERE anuncio_id = " . "$id_anuncio;";
+        //     $resImagem = pg_query($conexao, $sql);
+        //     $caminho = pg_fetch_result($resImagem, 0, 0);
         }
     }
+
+    
 ?>
