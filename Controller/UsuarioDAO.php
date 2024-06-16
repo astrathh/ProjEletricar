@@ -7,21 +7,36 @@ class UsuarioDAO
     public function gravar(Usuario $usuario)
     {
         // if (empty($email) || empty($senha) || empty($nome)) {
+        //     echo "Preencha todos os campos!";
         //     return false;
         // }
 
         $banco = new Banco();
         $conexao = $banco->conexao;
-        
-        $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('" . $usuario->getNome() . "', '" . $usuario->getEmail() . "', '" . $usuario->getSenha() . "')";
+
+        // função para verificar se o email já existe
+        $sql = "SELECT email FROM usuario WHERE email = '" . $usuario->getEmail() . "'";
         $resultado = pg_query($conexao, $sql);
         $r = pg_affected_rows($resultado);
-        
-        pg_close($conexao);
-        if ($resultado) {
-            echo "Usuário cadastrado com sucesso!";
+        if ($r > 0) {
+            echo '<script type="text/javascript">
+                        window.onload = function () { 
+                            alert("Email ja cadastrado!");
+                            window.location = "http://localhost/ProjEletricar/cadastro.html";
+                            }
+                        </script>';
         } else {
-            echo "Erro ao cadastrar usuário!";
+            $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('" . $usuario->getNome() . "', '" . $usuario->getEmail() . "', '" . $usuario->getSenha() . "')";
+            $resultado = pg_query($conexao, $sql);
+            $r = pg_affected_rows($resultado);
+            
+            pg_close($conexao);
+            if ($resultado) {
+                // redireciona para pagina de login
+                header ("Location: ../login.php");
+            } else {    
+                echo "Erro ao cadastrar usuário!";
+            }
         }
     }
 
@@ -67,6 +82,5 @@ class UsuarioDAO
         echo "Usuário não encontrado!";
         return false;
     }
-
 }
 

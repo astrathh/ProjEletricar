@@ -20,7 +20,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Comprar</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Vender</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Conta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Conta</a></li>
 
                 </ul>
             </div>
@@ -32,18 +32,41 @@
         <form action="Controller/Controlador.php" method="post">
             <div class="form_input mb-4">
                 <label>Nome</label>
-                <input type="text" name="txtNome" class="form-control">
+                <input type="text" name="txtNome" class="form-control" required>
             </div>
             <div class="form_input mb-4">
                 <label>Email</label>
-                <input type="email" name="txtEmail" class="form-control mb-3">
+                <input type="email" name="txtEmail" class="form-control mb-3" required>
             </div>
             <div class="form_input mb-4">
                 <label>Senha</label>
-                <input type="password" name="txtSenha" class="form-control mb-3">
+                <input type="password" name="txtSenha" class="form-control mb-3" required>
             </div>
             <div class="form_input mb-4">
-                <input type="submit" name="b1" value="Gravar" >
+                <!-- script js para confirmar se a senha coincide -->
+                <!-- <script type="text/javascript">
+                    function checkPassword(form) {
+                        password1 = form.txtSenha.value;
+                        password2 = form.txtSenha2.value;
+
+                        // Se a senha não for igual
+                        if (password1 != password2) {
+                            alert ("\nSenha não confere. Por favor, tente novamente.")
+                            return false;
+                        }
+
+                        // Se a senha for igual
+                        else{
+                            alert("\nSenha cadastrada com sucesso!")
+                            return true;
+                        }
+                    }
+                </script>
+                <label>Confirme sua senha</label>
+                <input type="password" name="txtSenha" class="form-control mb-3" required>
+            </div> -->
+            <div class="form_input mb-4">
+                <input type="submit" name="b1" value="Gravar">
             </div>
             <a href="login.php">Já possui uma conta? Faça login!</a> <!-- Link para a página de login-->
         </form>
